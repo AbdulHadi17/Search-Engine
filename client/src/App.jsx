@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Home from './Home';
+import { Route, Routes } from 'react-router-dom';
+// import Results from './Results';
 
 const App = () => {
   return (
-    <div className='w-screen h-screen flex justify-center items-center bg-slate-900 '>
+<>
+<Routes>
+  <Route exact path='/' element={<Home/>}/>
+  {/* <Route path='/results' element={<Results/>}/> */}
+</Routes>
+</>  
 
-    </div>
-  )
-}
+);
+};
 
-export default App
+export default App;
