@@ -1,3 +1,2 @@
 *.env
 /server/data/postings.csv
-/server/Preprocessing/lexicon.csv

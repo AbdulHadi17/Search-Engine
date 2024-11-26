@@ -15,7 +15,7 @@ nltk.download("omw-1.4", quiet=True)
 # Step 1: Load Data
 # Load the CSV file into a Pandas DataFrame
 # Ensure the file path is correct
-data_frame = pd.read_csv("server/Preprocessing/dummy.csv")
+data_frame = pd.read_csv("server/data/dummy.csv")
 
 # Specify the columns to process
 columns_to_process = ["company_name", "description", "title", "location", "skills_desc"]
