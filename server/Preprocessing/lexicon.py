@@ -72,3 +72,17 @@ for col in columns_to_process:
     if col in data_frame.columns:
         column_tokens = data_frame[col].apply(process_text)
         processed_texts.extend(column_tokens)  # Append processed tokens to the list
+
+# Step 5: Define Vocabulary Building Function
+def build_vocabulary(processed_texts):
+    """
+    Builds a vocabulary (unique word list) from processed texts and maps words to indices.
+    """
+    vocabulary = set()  # Use a set to store unique words
+    for tokens in processed_texts:
+        vocabulary.update(tokens)  # Add unique tokens to the set
+    # Create a sorted word-to-index mapping
+    return {word: idx for idx, word in enumerate(sorted(vocabulary))}
+
+# Create the vocabulary from processed texts
+vocabulary = build_vocabulary(processed_texts)
