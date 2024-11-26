@@ -26,3 +26,10 @@ for col in columns_to_process:
         data_frame[col] = data_frame[col].fillna("").astype(str)
     else:
         print(f"Column '{col}' not found in DataFrame. Skipping...")
+
+
+# Step 2: Initialize NLP Tools
+# Load English stopwords
+stop_words = set(stopwords.words("english"))
+# Initialize lemmatizer
+lemmatizer = WordNetLemmatizer()
