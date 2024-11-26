@@ -33,3 +33,22 @@ for col in columns_to_process:
 stop_words = set(stopwords.words("english"))
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
+
+# Step 3: Define Text Cleaning Function
+def clean_text(text):
+    """
+    Cleans the input text by:
+    - Converting to lowercase.
+    - Removing special characters, digits, and extra whitespace.
+    """
+    text = text.lower()
+    text = re.sub(r"[@#]", " ", text)  # Replace @ and # with a space
+    text = re.sub(r"[^\w\s]", " ", text)  # Remove non-alphanumeric characters
+    text = re.sub(r"\d+", "", text)  # Remove digits
+    text = re.sub(r"\s+", " ", text).strip()  # Remove extra whitespace
+    return text
+
+# Apply text cleaning to the specified columns
+for col in columns_to_process:
+    if col in data_frame.columns:
+        data_frame[col] = data_frame[col].apply(clean_text)
