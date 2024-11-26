@@ -52,3 +52,23 @@ def clean_text(text):
 for col in columns_to_process:
     if col in data_frame.columns:
         data_frame[col] = data_frame[col].apply(clean_text)
+
+# Step 4: Define Text Processing Function
+def process_text(text):
+    """
+    Processes the text by:
+    - Tokenizing into words.
+    - Removing stopwords.
+    - Lemmatizing tokens.
+    """
+    tokens = word_tokenize(text)  # Tokenize text
+    tokens = [token for token in tokens if token not in stop_words]  # Remove stopwords
+    lemmatized_tokens = [lemmatizer.lemmatize(token) for token in tokens]  # Lemmatize tokens
+    return lemmatized_tokens
+
+# Apply text processing to the specified columns
+processed_texts = []  # List to store processed tokens from all columns
+for col in columns_to_process:
+    if col in data_frame.columns:
+        column_tokens = data_frame[col].apply(process_text)
+        processed_texts.extend(column_tokens)  # Append processed tokens to the list
