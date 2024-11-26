@@ -86,3 +86,13 @@ def build_vocabulary(processed_texts):
 
 # Create the vocabulary from processed texts
 vocabulary = build_vocabulary(processed_texts)
+
+# Step 6: Save Vocabulary to a CSV File
+# Convert vocabulary dictionary to a DataFrame
+vocabulary_df = pd.DataFrame(list(vocabulary.items()), columns=["Word", "Index"])
+# Save the vocabulary DataFrame as a CSV file
+vocabulary_df.to_csv("server/Preprocessing/lexicon.csv", index=False)
+
+# Output results
+print("Lexicon saved successfully in lexicon.csv")
+print("Vocabulary Size:", len(vocabulary))
