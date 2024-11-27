@@ -15,7 +15,7 @@ nltk.download('wordnet', quiet=True)
 nltk.download('averaged_perceptron_tagger', quiet=True)
 
 # Load the dataset
-csv_path = "/server/data/dummy.csv"
+csv_path = "../data/dummy.csv"
 data = pd.read_csv(csv_path)
 
 # Preprocessing function to tokenize, remove stopwords, and lemmatize
