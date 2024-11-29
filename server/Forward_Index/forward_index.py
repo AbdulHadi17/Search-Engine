@@ -77,8 +77,5 @@ with open(json_output_path, 'w') as json_file:
 # Print confirmation message
 print(f"Forward index saved to {json_output_path}")
 
-for doc_id, word_freq in forward_index.items():
-    print("Document ID:", doc_id)
-    print("Word Frequencies:", word_freq)
-    print("-" * 100)  
+
 
