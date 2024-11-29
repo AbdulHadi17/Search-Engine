@@ -2,6 +2,8 @@
 import pandas as pd
 import re
 import nltk
+import os
+from pathlib import Path
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -15,7 +17,14 @@ nltk.download("omw-1.4", quiet=True)
 # Step 1: Load Data
 # Load the CSV file into a Pandas DataFrame
 # Ensure the file path is correct
-data_frame = pd.read_csv("server/data/dummy.csv")
+
+#Absolute Path gives the current location of this file.
+absolute_path = Path(__file__).resolve();
+
+#Rolling back to the parent of its parent then going to dummy.csv
+
+dummycsv_path = os.path.join(absolute_path.parents[1],'data','dummy.csv');
+data_frame = pd.read_csv(dummycsv_path);
 
 # Specify the columns to process
 columns_to_process = ["company_name", "description", "title", "location", "skills_desc"]
@@ -91,7 +100,8 @@ vocabulary = build_vocabulary(processed_texts)
 # Convert vocabulary dictionary to a DataFrame
 vocabulary_df = pd.DataFrame(list(vocabulary.items()), columns=["Word", "Index"])
 # Save the vocabulary DataFrame as a CSV file
-vocabulary_df.to_csv("server/Preprocessing/lexicon.csv", index=False)
+#giving the path to save the lexicon csv file
+vocabulary_df.to_csv(os.path.join(absolute_path.parents[0],'lexicon.csv'), index=False)
 
 # Output results
 print("Lexicon saved successfully in lexicon.csv")
