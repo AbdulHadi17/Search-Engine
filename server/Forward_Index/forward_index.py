@@ -7,15 +7,20 @@ from nltk.stem import WordNetLemmatizer
 from collections import Counter
 from nltk import pos_tag
 import os
+from pathlib import Path
+
 
 # Download necessary NLTK resources
 nltk.download('stopwords', quiet=True)
 nltk.download('punkt', quiet=True)
 nltk.download('wordnet', quiet=True)
 nltk.download('averaged_perceptron_tagger', quiet=True)
-
+nltk.download('omw-1.4', quiet=True);
 # Load the dataset
-csv_path = "/server/data/dummy.csv"
+
+absolute_path = Path(__file__).resolve(); 
+csv_path = os.path.join(absolute_path.parents[1],'data','dummy.csv');
+
 data = pd.read_csv(csv_path)
 
 # Preprocessing function to tokenize, remove stopwords, and lemmatize
@@ -60,7 +65,7 @@ forward_index = {
 }
 
 # Set the output path and ensure the directory exists
-json_output_path = "/server/Forward_Index/forward_index_output.json"
+json_output_path = os.path.join(absolute_path.parents[0],'forward_index.json');
 output_dir = os.path.dirname(json_output_path)
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
