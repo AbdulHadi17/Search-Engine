@@ -8,18 +8,18 @@ from collections import Counter
 from nltk import pos_tag
 import os
 from pathlib import Path
-
+from collections import Counter
 
 # Download necessary NLTK resources
 nltk.download('stopwords', quiet=True)
 nltk.download('punkt', quiet=True)
 nltk.download('wordnet', quiet=True)
 nltk.download('averaged_perceptron_tagger', quiet=True)
-nltk.download('omw-1.4', quiet=True);
-# Load the dataset
+nltk.download('omw-1.4', quiet=True)
 
-absolute_path = Path(__file__).resolve(); 
-csv_path = os.path.join(absolute_path.parents[1],'data','dummy.csv');
+# Load the dataset
+absolute_path = Path(__file__).resolve()
+csv_path = os.path.join(absolute_path.parents[1], 'data', 'dummy.csv')
 
 data = pd.read_csv(csv_path)
 
@@ -53,19 +53,19 @@ def get_wordnet_pos(treebank_tag):
         return None
 
 # Combine title and description for text processing
-data['text'] = data['title'] + " " + data['description']
+data['forward'] = data['title'] + " " + data['description']
 
 # Apply preprocessing to text
-data['processed_text'] = data['text'].apply(preprocess)
+data['processed_text'] = data['forward'].apply(preprocess)
 
 # Build the forward index using word frequencies
 forward_index = {
-    index: Counter(row['processed_text'])
+    str(index): Counter({str(k): v for k, v in Counter(row['processed_text']).items() if isinstance(k, str)})
     for index, row in data.iterrows()
 }
 
 # Set the output path and ensure the directory exists
-json_output_path = os.path.join(absolute_path.parents[0],'forward_index.json');
+json_output_path = os.path.join(absolute_path.parents[0], 'forward_index.json')
 output_dir = os.path.dirname(json_output_path)
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
@@ -76,3 +76,9 @@ with open(json_output_path, 'w') as json_file:
 
 # Print confirmation message
 print(f"Forward index saved to {json_output_path}")
+
+for doc_id, word_freq in forward_index.items():
+    print("Document ID:", doc_id)
+    print("Word Frequencies:", word_freq)
+    print("-" * 100)  
+

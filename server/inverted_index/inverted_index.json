@@ -1,0 +1,76 @@
+{
+    "java": [
+        {
+            "docID": 2,
+            "frequency": 4,
+            "positions": [
+                1,
+                2,
+                5,
+                7
+            ]
+        },
+        {
+            "docID": 0,
+            "frequency": 3,
+            "positions": [
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "docID": 1,
+            "frequency": 1,
+            "positions": [
+                2
+            ]
+        }
+    ],
+    "engineer": [
+        {
+            "docID": 2,
+            "frequency": 3,
+            "positions": [
+                0,
+                3,
+                6
+            ]
+        },
+        {
+            "docID": 0,
+            "frequency": 2,
+            "positions": [
+                1,
+                4
+            ]
+        }
+    ],
+    "analytics": [
+        {
+            "docID": 1,
+            "frequency": 2,
+            "positions": [
+                0,
+                3
+            ]
+        },
+        {
+            "docID": 2,
+            "frequency": 2,
+            "positions": [
+                0,
+                4
+            ]
+        }
+    ],
+    "visualize": [
+        {
+            "docID": 1,
+            "frequency": 1,
+            "positions": [
+                5
+            ]
+        }
+    ]
+}
