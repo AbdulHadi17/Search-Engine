@@ -1,747 +1,901 @@
 {
     "0": {
-        "word_counts": {
-            "software": 2,
-            "engineer": 1,
-            "lead": 1,
-            "solution": 1,
-            "provider": 1,
-            "hello": 2
-        },
-        "positions": {
-            "software": [
+        "software": {
+            "frequency": 2,
+            "positions": [
                 0,
                 3
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "lead": [
+            ]
+        },
+        "lead": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 4
-            ],
-            "provider": [
+            ]
+        },
+        "provider": {
+            "frequency": 1,
+            "positions": [
                 5
-            ],
-            "hello": [
+            ]
+        },
+        "hello": {
+            "frequency": 2,
+            "positions": [
                 6,
                 7
             ]
         }
     },
     "1": {
-        "word_counts": {
-            "data": 1,
-            "scientist": 1,
-            "advanced": 1,
-            "research": 1
-        },
-        "positions": {
-            "data": [
+        "data": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "scientist": [
+            ]
+        },
+        "scientist": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "advanced": [
+            ]
+        },
+        "advanced": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "research": [
+            ]
+        },
+        "research": {
+            "frequency": 1,
+            "positions": [
                 3
             ]
         }
     },
     "2": {
-        "word_counts": {
-            "frontend": 1,
-            "developer": 1,
-            "develops": 1,
-            "application": 1
-        },
-        "positions": {
-            "frontend": [
+        "frontend": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "developer": [
+            ]
+        },
+        "developer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "develops": [
+            ]
+        },
+        "develops": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "application": [
+            ]
+        },
+        "application": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "3": {
-        "word_counts": {
-            "marketing": 2,
-            "specialist": 1,
-            "automation": 1,
-            "platform": 1
-        },
-        "positions": {
-            "marketing": [
+        "marketing": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "specialist": [
+            ]
+        },
+        "specialist": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "automation": [
+            ]
+        },
+        "automation": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "platform": [
+            ]
+        },
+        "platform": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "4": {
-        "word_counts": {
-            "robotics": 2,
-            "engineer": 1,
-            "build": 1,
-            "intelligent": 1,
-            "system": 1
-        },
-        "positions": {
-            "robotics": [
+        "robotics": {
+            "frequency": 2,
+            "positions": [
                 0,
                 4
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "build": [
+            ]
+        },
+        "build": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "intelligent": [
+            ]
+        },
+        "intelligent": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "system": [
+            ]
+        },
+        "system": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "5": {
-        "word_counts": {
-            "specialist": 1,
-            "educational": 1,
-            "software": 1
-        },
-        "positions": {
-            "specialist": [
+        "specialist": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "educational": [
+            ]
+        },
+        "educational": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "software": [
+            ]
+        },
+        "software": {
+            "frequency": 1,
+            "positions": [
                 3
             ]
         }
     },
     "6": {
-        "word_counts": {
-            "healthcare": 2,
-            "analyst": 1,
-            "management": 1,
-            "system": 1
-        },
-        "positions": {
-            "healthcare": [
+        "healthcare": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "analyst": [
+            ]
+        },
+        "analyst": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "management": [
+            ]
+        },
+        "management": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "system": [
+            ]
+        },
+        "system": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "7": {
-        "word_counts": {
-            "environmental": 1,
-            "engineer": 1,
-            "innovates": 1,
-            "sustainable": 1,
-            "tech": 1,
-            "solution": 1
-        },
-        "positions": {
-            "environmental": [
+        "environmental": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "innovates": [
+            ]
+        },
+        "innovates": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "sustainable": [
+            ]
+        },
+        "sustainable": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 4
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "8": {
-        "word_counts": {
-            "cybersecurity": 2,
-            "analyst": 1,
-            "develops": 1,
-            "tool": 1
-        },
-        "positions": {
-            "cybersecurity": [
+        "cybersecurity": {
+            "frequency": 2,
+            "positions": [
                 0,
                 3
-            ],
-            "analyst": [
+            ]
+        },
+        "analyst": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "develops": [
+            ]
+        },
+        "develops": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "tool": [
+            ]
+        },
+        "tool": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "9": {
-        "word_counts": {
-            "solar": 1,
-            "engineer": 1,
-            "focus": 1,
-            "renewable": 1,
-            "energy": 1,
-            "tech": 1
-        },
-        "positions": {
-            "solar": [
+        "solar": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "focus": [
+            ]
+        },
+        "focus": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "renewable": [
+            ]
+        },
+        "renewable": {
+            "frequency": 1,
+            "positions": [
                 4
-            ],
-            "energy": [
+            ]
+        },
+        "energy": {
+            "frequency": 1,
+            "positions": [
                 5
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 6
             ]
         }
     },
     "10": {
-        "word_counts": {
-            "civil": 1,
-            "engineer": 1,
-            "construction": 1,
-            "technology": 1,
-            "software": 1
-        },
-        "positions": {
-            "civil": [
+        "civil": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "construction": [
+            ]
+        },
+        "construction": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "technology": [
+            ]
+        },
+        "technology": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "software": [
+            ]
+        },
+        "software": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "11": {
-        "word_counts": {
-            "clinical": 1,
-            "researcher": 1,
-            "health": 1,
-            "tech": 1,
-            "patient": 1,
-            "care": 1
-        },
-        "positions": {
-            "clinical": [
+        "clinical": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "researcher": [
+            ]
+        },
+        "researcher": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "health": [
+            ]
+        },
+        "health": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "patient": [
+            ]
+        },
+        "patient": {
+            "frequency": 1,
+            "positions": [
                 5
-            ],
-            "care": [
+            ]
+        },
+        "care": {
+            "frequency": 1,
+            "positions": [
                 6
             ]
         }
     },
     "12": {
-        "word_counts": {
-            "designer": 1,
-            "creative": 1,
-            "digital": 1,
-            "solution": 1
-        },
-        "positions": {
-            "designer": [
+        "designer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "creative": [
+            ]
+        },
+        "creative": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "digital": [
+            ]
+        },
+        "digital": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "13": {
-        "word_counts": {
-            "automobile": 1,
-            "engineer": 1,
-            "automotive": 1,
-            "software": 1,
-            "tool": 1
-        },
-        "positions": {
-            "automobile": [
+        "automobile": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "automotive": [
+            ]
+        },
+        "automotive": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "software": [
+            ]
+        },
+        "software": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "tool": [
+            ]
+        },
+        "tool": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "14": {
-        "word_counts": {
-            "aerospace": 2,
-            "engineer": 1,
-            "technology": 1,
-            "design": 1
-        },
-        "positions": {
-            "aerospace": [
+        "aerospace": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "technology": [
+            ]
+        },
+        "technology": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "design": [
+            ]
+        },
+        "design": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "15": {
-        "word_counts": {
-            "quantum": 2,
-            "researcher": 1,
-            "explores": 1,
-            "compute": 1
-        },
-        "positions": {
-            "quantum": [
+        "quantum": {
+            "frequency": 2,
+            "positions": [
                 0,
                 3
-            ],
-            "researcher": [
+            ]
+        },
+        "researcher": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "explores": [
+            ]
+        },
+        "explores": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "compute": [
+            ]
+        },
+        "compute": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "16": {
-        "word_counts": {
-            "retail": 2,
-            "analyst": 1,
-            "tech": 1,
-            "solution": 1,
-            "sector": 1
-        },
-        "positions": {
-            "retail": [
+        "retail": {
+            "frequency": 2,
+            "positions": [
                 0,
                 5
-            ],
-            "analyst": [
+            ]
+        },
+        "analyst": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "sector": [
+            ]
+        },
+        "sector": {
+            "frequency": 1,
+            "positions": [
                 6
             ]
         }
     },
     "17": {
-        "word_counts": {
-            "energy": 2,
-            "analyst": 1,
-            "focus": 1,
-            "solar": 1,
-            "renewable": 1
-        },
-        "positions": {
-            "energy": [
+        "energy": {
+            "frequency": 2,
+            "positions": [
                 0,
                 7
-            ],
-            "analyst": [
+            ]
+        },
+        "analyst": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "focus": [
+            ]
+        },
+        "focus": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "solar": [
+            ]
+        },
+        "solar": {
+            "frequency": 1,
+            "positions": [
                 4
-            ],
-            "renewable": [
+            ]
+        },
+        "renewable": {
+            "frequency": 1,
+            "positions": [
                 6
             ]
         }
     },
     "18": {
-        "word_counts": {
-            "game": 2,
-            "developer": 1,
-            "development": 1,
-            "design": 1
-        },
-        "positions": {
-            "game": [
+        "game": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "developer": [
+            ]
+        },
+        "developer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "development": [
+            ]
+        },
+        "development": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "design": [
+            ]
+        },
+        "design": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "19": {
-        "word_counts": {
-            "medical": 2,
-            "specialist": 1,
-            "advance": 1,
-            "application": 1
-        },
-        "positions": {
-            "medical": [
+        "medical": {
+            "frequency": 2,
+            "positions": [
                 0,
                 5
-            ],
-            "specialist": [
+            ]
+        },
+        "specialist": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "advance": [
+            ]
+        },
+        "advance": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "application": [
+            ]
+        },
+        "application": {
+            "frequency": 1,
+            "positions": [
                 7
             ]
         }
     },
     "20": {
-        "word_counts": {
-            "network": 1,
-            "administrator": 1,
-            "secure": 1,
-            "networking": 1,
-            "system": 1
-        },
-        "positions": {
-            "network": [
+        "network": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "administrator": [
+            ]
+        },
+        "administrator": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "secure": [
+            ]
+        },
+        "secure": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "networking": [
+            ]
+        },
+        "networking": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "system": [
+            ]
+        },
+        "system": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "21": {
-        "word_counts": {
-            "cloud": 2,
-            "engineer": 1,
-            "compute": 1,
-            "service": 1
-        },
-        "positions": {
-            "cloud": [
+        "cloud": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "compute": [
+            ]
+        },
+        "compute": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "service": [
+            ]
+        },
+        "service": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "22": {
-        "word_counts": {
-            "marine": 2,
-            "engineer": 1,
-            "technology": 1,
-            "solution": 1
-        },
-        "positions": {
-            "marine": [
+        "marine": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "technology": [
+            ]
+        },
+        "technology": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "23": {
-        "word_counts": {
-            "life": 2,
-            "coach": 2,
-            "tech": 1,
-            "solution": 1
-        },
-        "positions": {
-            "life": [
+        "life": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "coach": [
+            ]
+        },
+        "coach": {
+            "frequency": 2,
+            "positions": [
                 1,
                 3
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 5
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 6
             ]
         }
     },
     "24": {
-        "word_counts": {
-            "full": 1,
-            "stack": 1,
-            "developer": 1,
-            "custom": 1,
-            "software": 1,
-            "development": 1
-        },
-        "positions": {
-            "full": [
+        "full": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "stack": [
+            ]
+        },
+        "stack": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "developer": [
+            ]
+        },
+        "developer": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "custom": [
+            ]
+        },
+        "custom": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "software": [
+            ]
+        },
+        "software": {
+            "frequency": 1,
+            "positions": [
                 4
-            ],
-            "development": [
+            ]
+        },
+        "development": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "25": {
-        "word_counts": {
-            "flight": 1,
-            "engineer": 1,
-            "aviation": 1,
-            "tech": 1,
-            "management": 1
-        },
-        "positions": {
-            "flight": [
+        "flight": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "engineer": [
+            ]
+        },
+        "engineer": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "aviation": [
+            ]
+        },
+        "aviation": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "management": [
+            ]
+        },
+        "management": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "26": {
-        "word_counts": {
-            "urban": 2,
-            "planner": 1,
-            "planning": 1,
-            "solution": 1
-        },
-        "positions": {
-            "urban": [
+        "urban": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "planner": [
+            ]
+        },
+        "planner": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "planning": [
+            ]
+        },
+        "planning": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "solution": [
+            ]
+        },
+        "solution": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }
     },
     "27": {
-        "word_counts": {
-            "finance": 1,
-            "analyst": 1,
-            "financial": 1,
-            "technology": 1,
-            "apps": 1
-        },
-        "positions": {
-            "finance": [
+        "finance": {
+            "frequency": 1,
+            "positions": [
                 0
-            ],
-            "analyst": [
+            ]
+        },
+        "analyst": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "financial": [
+            ]
+        },
+        "financial": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "technology": [
+            ]
+        },
+        "technology": {
+            "frequency": 1,
+            "positions": [
                 3
-            ],
-            "apps": [
+            ]
+        },
+        "apps": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "28": {
-        "word_counts": {
-            "food": 2,
-            "scientist": 1,
-            "nutrition": 1,
-            "technology": 1
-        },
-        "positions": {
-            "food": [
+        "food": {
+            "frequency": 2,
+            "positions": [
                 0,
                 2
-            ],
-            "scientist": [
+            ]
+        },
+        "scientist": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "nutrition": [
+            ]
+        },
+        "nutrition": {
+            "frequency": 1,
+            "positions": [
                 4
-            ],
-            "technology": [
+            ]
+        },
+        "technology": {
+            "frequency": 1,
+            "positions": [
                 5
             ]
         }
     },
     "29": {
-        "word_counts": {
-            "travel": 2,
-            "consultant": 1,
-            "innovative": 1,
-            "tech": 1
-        },
-        "positions": {
-            "travel": [
+        "travel": {
+            "frequency": 2,
+            "positions": [
                 0,
                 3
-            ],
-            "consultant": [
+            ]
+        },
+        "consultant": {
+            "frequency": 1,
+            "positions": [
                 1
-            ],
-            "innovative": [
+            ]
+        },
+        "innovative": {
+            "frequency": 1,
+            "positions": [
                 2
-            ],
-            "tech": [
+            ]
+        },
+        "tech": {
+            "frequency": 1,
+            "positions": [
                 4
             ]
         }

@@ -7,7 +7,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag
 import os
 from pathlib import Path
-from collections import defaultdict, Counter
+from collections import defaultdict
 
 # Download necessary NLTK resources
 nltk.download('stopwords', quiet=True)
@@ -57,18 +57,23 @@ data['forward'] = data['title'] + " " + data['description']
 # Apply preprocessing to text
 data['processed_text_with_positions'] = data['forward'].apply(preprocess_with_positions)
 
-# Build the forward index with positions
+# Build the forward index with frequency and positions
 forward_index = {}
 for index, row in data.iterrows():
     word_positions = defaultdict(list)
     for word, pos in row['processed_text_with_positions']:
         word_positions[word].append(pos)
 
-    # Add word counts and positions to the forward index
-    forward_index[str(index)] = {
-        "word_counts": {word: len(positions) for word, positions in word_positions.items()},
-        "positions": {word: positions for word, positions in word_positions.items()}
-    }
+    # Format the word counts and positions in the desired way
+    formatted_index = {}
+    for word, positions in word_positions.items():
+        formatted_index[word] = {
+            "frequency": len(positions),
+            "positions": positions
+        }
+
+    # Add formatted word counts and positions to the forward index
+    forward_index[str(index)] = formatted_index
 
 # Set the output path and ensure the directory exists
 json_output_path = os.path.join(absolute_path.parents[0], 'forward_index.json')
@@ -82,4 +87,3 @@ with open(json_output_path, 'w') as json_file:
 
 # Print confirmation message
 print(f"Forward index with positions saved to {json_output_path}")
-
