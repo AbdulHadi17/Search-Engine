@@ -4,11 +4,10 @@ import json
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
-from collections import Counter
 from nltk import pos_tag
 import os
 from pathlib import Path
-from collections import Counter
+from collections import defaultdict, Counter
 
 # Download necessary NLTK resources
 nltk.download('stopwords', quiet=True)
@@ -24,7 +23,7 @@ csv_path = os.path.join(absolute_path.parents[1], 'data', 'dummy.csv')
 data = pd.read_csv(csv_path)
 
 # Preprocessing function to tokenize, remove stopwords, and lemmatize
-def preprocess(text):
+def preprocess_with_positions(text):
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
 
@@ -32,12 +31,12 @@ def preprocess(text):
         return []
 
     tokens = word_tokenize(text.lower())  # Tokenize and lowercase
-    processed_tokens = [
-        lemmatizer.lemmatize(word, get_wordnet_pos(pos_tag([word])[0][1]) or 'n')
-        for word in tokens
-        if word.isalnum() and word not in stop_words and len(word) > 2
-    ]
-    return processed_tokens
+    processed_tokens_with_positions = []
+    for i, word in enumerate(tokens):
+        if word.isalnum() and word not in stop_words and len(word) > 2:
+            lemma = lemmatizer.lemmatize(word, get_wordnet_pos(pos_tag([word])[0][1]) or 'n')
+            processed_tokens_with_positions.append((lemma, i))  # Append word and its position
+    return processed_tokens_with_positions
 
 # Map POS tags from Penn Treebank to WordNet format
 def get_wordnet_pos(treebank_tag):
@@ -56,13 +55,20 @@ def get_wordnet_pos(treebank_tag):
 data['forward'] = data['title'] + " " + data['description']
 
 # Apply preprocessing to text
-data['processed_text'] = data['forward'].apply(preprocess)
+data['processed_text_with_positions'] = data['forward'].apply(preprocess_with_positions)
 
-# Build the forward index using word frequencies
-forward_index = {
-    str(index): Counter({str(k): v for k, v in Counter(row['processed_text']).items() if isinstance(k, str)})
-    for index, row in data.iterrows()
-}
+# Build the forward index with positions
+forward_index = {}
+for index, row in data.iterrows():
+    word_positions = defaultdict(list)
+    for word, pos in row['processed_text_with_positions']:
+        word_positions[word].append(pos)
+
+    # Add word counts and positions to the forward index
+    forward_index[str(index)] = {
+        "word_counts": {word: len(positions) for word, positions in word_positions.items()},
+        "positions": {word: positions for word, positions in word_positions.items()}
+    }
 
 # Set the output path and ensure the directory exists
 json_output_path = os.path.join(absolute_path.parents[0], 'forward_index.json')
@@ -75,7 +81,5 @@ with open(json_output_path, 'w') as json_file:
     json.dump(forward_index, json_file, indent=4)
 
 # Print confirmation message
-print(f"Forward index saved to {json_output_path}")
-
-
+print(f"Forward index with positions saved to {json_output_path}")
 
