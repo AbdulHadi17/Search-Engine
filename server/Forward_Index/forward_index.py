@@ -20,6 +20,28 @@ nltk.download('omw-1.4', quiet=True)
 absolute_path = Path(__file__).resolve()
 csv_path = os.path.join(absolute_path.parents[1], 'data', 'dummy.csv')
 
+# Load the lexicon from the CSV file
+lexicon_path = os.path.join(absolute_path.parents[0], 'lexicon.csv')
+
+# Check if the lexicon file exists
+if not os.path.exists(lexicon_path):
+    print(f"Error: The lexicon file was not found at {lexicon_path}. Creating a placeholder.")
+    # Create a placeholder lexicon file with sample data
+    sample_lexicon = pd.DataFrame({"Word": ["sample", "word"], "Index": [1, 2]})
+    sample_lexicon.to_csv(lexicon_path, index=False)
+    print(f"Placeholder lexicon file created at {lexicon_path}.")
+
+# Load the lexicon file
+lexicon_df = pd.read_csv(lexicon_path)
+
+# Create a dictionary mapping words to their lexicon indices
+vocabulary = dict(zip(lexicon_df['Word'], lexicon_df['Index']))
+
+# Check if the dataset exists
+if not os.path.exists(csv_path):
+    raise FileNotFoundError(f"The dataset file was not found at {csv_path}.")
+
+# Load the dataset
 data = pd.read_csv(csv_path)
 
 # Preprocessing function to tokenize, remove stopwords, and lemmatize
@@ -62,12 +84,13 @@ forward_index = {}
 for index, row in data.iterrows():
     word_positions = defaultdict(list)
     for word, pos in row['processed_text_with_positions']:
-        word_positions[word].append(pos)
+        if word in vocabulary:  # Only consider words present in the lexicon
+            word_positions[vocabulary[word]].append(pos)  # Use lexicon index instead of word
 
     # Format the word counts and positions in the desired way
     formatted_index = {}
-    for word, positions in word_positions.items():
-        formatted_index[word] = {
+    for word_index, positions in word_positions.items():
+        formatted_index[word_index] = {
             "frequency": len(positions),
             "positions": positions
         }
@@ -86,4 +109,4 @@ with open(json_output_path, 'w') as json_file:
     json.dump(forward_index, json_file, indent=4)
 
 # Print confirmation message
-print(f"Forward index with positions saved to {json_output_path}")
+print(f"Forward index with lexicon indices saved to {json_output_path}")

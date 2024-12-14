@@ -1,37 +1,31 @@
 {
     "0": {
-        "software": {
+        "159": {
             "frequency": 2,
             "positions": [
                 0,
                 3
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "lead": {
-            "frequency": 1,
-            "positions": [
-                2
-            ]
-        },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 4
             ]
         },
-        "provider": {
+        "137": {
             "frequency": 1,
             "positions": [
                 5
             ]
         },
-        "hello": {
+        "90": {
             "frequency": 2,
             "positions": [
                 6,
@@ -40,25 +34,25 @@
         }
     },
     "1": {
-        "data": {
+        "52": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "scientist": {
+        "149": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "advanced": {
+        "3": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "research": {
+        "141": {
             "frequency": 1,
             "positions": [
                 3
@@ -66,25 +60,25 @@
         }
     },
     "2": {
-        "frontend": {
+        "80": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "developer": {
+        "57": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "develops": {
+        "59": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "application": {
+        "13": {
             "frequency": 1,
             "positions": [
                 4
@@ -92,26 +86,26 @@
         }
     },
     "3": {
-        "marketing": {
+        "108": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "specialist": {
+        "162": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "automation": {
+        "19": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "platform": {
+        "134": {
             "frequency": 1,
             "positions": [
                 4
@@ -119,32 +113,32 @@
         }
     },
     "4": {
-        "robotics": {
+        "144": {
             "frequency": 2,
             "positions": [
                 0,
                 4
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "build": {
+        "28": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "intelligent": {
+        "98": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "system": {
+        "166": {
             "frequency": 1,
             "positions": [
                 5
@@ -152,19 +146,19 @@
         }
     },
     "5": {
-        "specialist": {
+        "162": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "educational": {
+        "65": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "software": {
+        "159": {
             "frequency": 1,
             "positions": [
                 3
@@ -172,26 +166,26 @@
         }
     },
     "6": {
-        "healthcare": {
+        "89": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "analyst": {
+        "11": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "management": {
+        "106": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "system": {
+        "166": {
             "frequency": 1,
             "positions": [
                 4
@@ -199,37 +193,37 @@
         }
     },
     "7": {
-        "environmental": {
+        "68": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "innovates": {
+        "95": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "sustainable": {
+        "165": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 4
             ]
         },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 5
@@ -237,26 +231,26 @@
         }
     },
     "8": {
-        "cybersecurity": {
+        "50": {
             "frequency": 2,
             "positions": [
                 0,
                 3
             ]
         },
-        "analyst": {
+        "11": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "develops": {
+        "59": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "tool": {
+        "170": {
             "frequency": 1,
             "positions": [
                 4
@@ -264,37 +258,37 @@
         }
     },
     "9": {
-        "solar": {
+        "160": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "focus": {
+        "76": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "renewable": {
+        "140": {
             "frequency": 1,
             "positions": [
                 4
             ]
         },
-        "energy": {
+        "66": {
             "frequency": 1,
             "positions": [
                 5
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 6
@@ -302,31 +296,31 @@
         }
     },
     "10": {
-        "civil": {
+        "35": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "construction": {
+        "44": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "technology": {
+        "169": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "software": {
+        "159": {
             "frequency": 1,
             "positions": [
                 5
@@ -334,37 +328,37 @@
         }
     },
     "11": {
-        "clinical": {
+        "36": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "researcher": {
+        "142": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "health": {
+        "88": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "patient": {
+        "127": {
             "frequency": 1,
             "positions": [
                 5
             ]
         },
-        "care": {
+        "31": {
             "frequency": 1,
             "positions": [
                 6
@@ -372,25 +366,25 @@
         }
     },
     "12": {
-        "designer": {
+        "55": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "creative": {
+        "47": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "digital": {
+        "61": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 4
@@ -398,31 +392,31 @@
         }
     },
     "13": {
-        "automobile": {
+        "20": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "automotive": {
+        "21": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "software": {
+        "159": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "tool": {
+        "170": {
             "frequency": 1,
             "positions": [
                 5
@@ -430,26 +424,26 @@
         }
     },
     "14": {
-        "aerospace": {
+        "6": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "technology": {
+        "169": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "design": {
+        "54": {
             "frequency": 1,
             "positions": [
                 5
@@ -457,59 +451,53 @@
         }
     },
     "15": {
-        "quantum": {
+        "139": {
             "frequency": 2,
             "positions": [
                 0,
                 3
             ]
         },
-        "researcher": {
+        "142": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "explores": {
+        "70": {
             "frequency": 1,
             "positions": [
                 2
             ]
-        },
-        "compute": {
-            "frequency": 1,
-            "positions": [
-                4
-            ]
         }
     },
     "16": {
-        "retail": {
+        "143": {
             "frequency": 2,
             "positions": [
                 0,
                 5
             ]
         },
-        "analyst": {
+        "11": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "sector": {
+        "151": {
             "frequency": 1,
             "positions": [
                 6
@@ -517,32 +505,32 @@
         }
     },
     "17": {
-        "energy": {
+        "66": {
             "frequency": 2,
             "positions": [
                 0,
                 7
             ]
         },
-        "analyst": {
+        "11": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "focus": {
+        "76": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "solar": {
+        "160": {
             "frequency": 1,
             "positions": [
                 4
             ]
         },
-        "renewable": {
+        "140": {
             "frequency": 1,
             "positions": [
                 6
@@ -550,26 +538,26 @@
         }
     },
     "18": {
-        "game": {
+        "83": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "developer": {
+        "57": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "development": {
+        "58": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "design": {
+        "54": {
             "frequency": 1,
             "positions": [
                 5
@@ -577,26 +565,26 @@
         }
     },
     "19": {
-        "medical": {
+        "113": {
             "frequency": 2,
             "positions": [
                 0,
                 5
             ]
         },
-        "specialist": {
+        "162": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "advance": {
+        "2": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "application": {
+        "13": {
             "frequency": 1,
             "positions": [
                 7
@@ -604,31 +592,31 @@
         }
     },
     "20": {
-        "network": {
+        "118": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "administrator": {
+        "0": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "secure": {
+        "152": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "networking": {
+        "119": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "system": {
+        "166": {
             "frequency": 1,
             "positions": [
                 4
@@ -636,26 +624,20 @@
         }
     },
     "21": {
-        "cloud": {
+        "37": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "compute": {
-            "frequency": 1,
-            "positions": [
-                3
-            ]
-        },
-        "service": {
+        "155": {
             "frequency": 1,
             "positions": [
                 4
@@ -663,26 +645,26 @@
         }
     },
     "22": {
-        "marine": {
+        "107": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "technology": {
+        "169": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 5
@@ -690,27 +672,27 @@
         }
     },
     "23": {
-        "life": {
+        "104": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "coach": {
+        "39": {
             "frequency": 2,
             "positions": [
                 1,
                 3
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 5
             ]
         },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 6
@@ -718,37 +700,37 @@
         }
     },
     "24": {
-        "full": {
+        "81": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "stack": {
+        "163": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "developer": {
+        "57": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "custom": {
+        "48": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "software": {
+        "159": {
             "frequency": 1,
             "positions": [
                 4
             ]
         },
-        "development": {
+        "58": {
             "frequency": 1,
             "positions": [
                 5
@@ -756,31 +738,31 @@
         }
     },
     "25": {
-        "flight": {
+        "74": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "engineer": {
+        "67": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "aviation": {
+        "22": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "management": {
+        "106": {
             "frequency": 1,
             "positions": [
                 5
@@ -788,26 +770,26 @@
         }
     },
     "26": {
-        "urban": {
+        "174": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "planner": {
+        "132": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "planning": {
+        "133": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "solution": {
+        "161": {
             "frequency": 1,
             "positions": [
                 4
@@ -815,31 +797,31 @@
         }
     },
     "27": {
-        "finance": {
+        "71": {
             "frequency": 1,
             "positions": [
                 0
             ]
         },
-        "analyst": {
+        "11": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "financial": {
+        "72": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "technology": {
+        "169": {
             "frequency": 1,
             "positions": [
                 3
             ]
         },
-        "apps": {
+        "14": {
             "frequency": 1,
             "positions": [
                 5
@@ -847,26 +829,26 @@
         }
     },
     "28": {
-        "food": {
+        "77": {
             "frequency": 2,
             "positions": [
                 0,
                 2
             ]
         },
-        "scientist": {
+        "149": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "nutrition": {
+        "124": {
             "frequency": 1,
             "positions": [
                 4
             ]
         },
-        "technology": {
+        "169": {
             "frequency": 1,
             "positions": [
                 5
@@ -874,26 +856,26 @@
         }
     },
     "29": {
-        "travel": {
+        "171": {
             "frequency": 2,
             "positions": [
                 0,
                 3
             ]
         },
-        "consultant": {
+        "45": {
             "frequency": 1,
             "positions": [
                 1
             ]
         },
-        "innovative": {
+        "96": {
             "frequency": 1,
             "positions": [
                 2
             ]
         },
-        "tech": {
+        "168": {
             "frequency": 1,
             "positions": [
                 4
