@@ -21,7 +21,7 @@ absolute_path = Path(__file__).resolve()
 csv_path = os.path.join(absolute_path.parents[1], 'data', 'dummy.csv')
 
 # Load the lexicon from the CSV file
-lexicon_path = os.path.join(absolute_path.parents[0], 'lexicon.csv')
+lexicon_path = os.path.join(absolute_path.parents[1],'Preprocessing', 'lexicon.csv')
 
 # Check if the lexicon file exists
 if not os.path.exists(lexicon_path):
