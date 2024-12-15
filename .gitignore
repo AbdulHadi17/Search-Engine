@@ -1,2 +1,4 @@
 *.env
 /server/data/postings.csv
+/server/Forward_Index/forward_index.json
+/server/inverted_index/inverted_index.json
