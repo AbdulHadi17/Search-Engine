@@ -1,4 +1,4 @@
-import json
+import ujson as json
 from collections import defaultdict
 import os
 from pathlib import Path
@@ -50,8 +50,8 @@ for docID, words in forward_index.items():
         })
 
 #sorting for efficiency
-for word in inverted_index:
-    inverted_index[word] = sorted(inverted_index[word], key=lambda x: x['frequency'], reverse=True);
+# for word in inverted_index:
+#     inverted_index[word] = sorted(inverted_index[word], key=lambda x: x['frequency'], reverse=True);
 
 #replacing if file exists
 output_directory = os.path.dirname(path_output_file)
