@@ -1,76 +1,119 @@
-import React, { useState } from "react";
-import { IoSearch } from "react-icons/io5";
-import searchResults from "./modules/searchResults";
+"use client";
 
-const Home = () => {
-  const [hasSearched, setHasSearched] = useState(false);
-  const [query, setQuery] = useState("");
+import { useState, useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Moon, Sun } from "lucide-react";
+import { Link } from "react-router-dom";
 
-  const handleQueryChange = (e) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSearch = () => {
-    if (!query.trim()) {
-      alert("Please enter a valid search query!");
-      return;
-    }
-
-    // add logic for sending the query to the backend
-    
-    setHasSearched(true);
-  };
-
-  return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-950">
-      {/* Search Bar */}
-      <div className="ml-[10%] mr-[10%] md:ml-[20%] md:mr-[20%] bg-slate-950 shadow-sm shadow-black w-full py-5 justify-center flex rounded-full">
-        <input
-          placeholder="Search for Jobs..."
-          value={query}
-          onChange={handleQueryChange}
-          type="text"
-          className="bg-white w-[80%] px-4 py-2 rounded-l-2xl outline-none border border-b-4 shadow-black shadow-sm"
-        />
-        <button
-          onClick={handleSearch}
-          className="bg-red-700 px-4 py-2 border border-red-600 rounded-r-2xl flex justify-center items-center"
-        >
-          <IoSearch className="text-white text-2xl hover:scale-105" />
-        </button>
-      </div>
-
-      {/* Search Results */}
-      {hasSearched && (
-        <div className="h-[90vh] bg-slate-50 w-full py-4 md:px-12 px-6 overflow-y-auto">
-          <div className="px-7 text-gray-700">
-            Fetched {searchResults.totalResults} sites in 0.009 seconds
-          </div>
-          <div className="mt-2 w-full h-full flex flex-col p-4 gap-3">
-            {searchResults.results.map((result) => (
-              <div
-                key={result.id}
-                className="border p-3 bg-white rounded shadow-md"
-              >
-                <h3 className="text-lg font-bold line-clamp-1">{result.title}</h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  {result.description}
-                </p>
-                <a
-                  href={result.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline mt-2 block line-clamp-1"
-                >
-                  {result.displayUrl}
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
+// Mock function to simulate search (unchanged)
+const mockSearch = async (query) => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return [
+        {
+            id: 1,
+            title: `Result 1 for "${query}"`,
+            snippet: "This is a snippet for result 1...",
+        },
+        {
+            id: 2,
+            title: `Result 2 for "${query}"`,
+            snippet: "This is a snippet for result 2...",
+        },
+        {
+            id: 3,
+            title: `Result 3 for "${query}"`,
+            snippet: "This is a snippet for result 3...",
+        },
+    ];
 };
 
-export default Home;
+export default function Home() {
+    const [query, setQuery] = useState("");
+    const [results, setResults] = useState([]);
+    const [isSearching, setIsSearching] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
+
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [isDarkMode]);
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        if (!query.trim()) return;
+
+        setIsSearching(true);
+        const searchResults = await mockSearch(query);
+        setResults(searchResults);
+        setIsSearching(false);
+    };
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 transition-colors duration-500">
+            <div className="absolute inset-0 bg-grid-slate-200 dark:bg-grid-slate-700 [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none"></div>
+            <main className="relative flex min-h-screen flex-col items-center justify-start p-24">
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute top-4 right-4"
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                >
+                    {isDarkMode ? (
+                        <Sun className="h-[1.2rem] w-[1.2rem]" />
+                    ) : (
+                        <Moon className="h-[1.2rem] w-[1.2rem]" />
+                    )}
+                </Button>
+
+                <h1 className="text-4xl font-bold mb-8 text-gray-800 dark:text-white">
+                    Job Posting
+                </h1>
+
+                <form onSubmit={handleSearch} className="w-full max-w-2xl mb-8">
+                    <div className="flex gap-2">
+                        <Input
+                            type="text"
+                            placeholder="Enter your search query"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            className="flex-grow border-white bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm"
+                        />
+                        <Button
+                            type="submit"
+                            disabled={isSearching}
+                            className="bg-blue-600 hover:bg-blue-700 text-white"
+                        >
+                            {isSearching ? "Searching..." : "Search"}
+                        </Button>
+                    </div>
+                </form>
+
+                <div className="w-full max-w-2xl mb-8">
+                    {results.map((result) => (
+                        <div
+                            key={result.id}
+                            className="mb-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg"
+                        >
+                            <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                                {result.title}
+                            </h2>
+                            <p className="text-sm text-gray-600 dark:text-gray-300">
+                                {result.snippet}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+                <Link to="/add-doc">
+                    <Button className="bg-green-600 hover:bg-green-700 text-white">
+                        Add Document
+                    </Button>
+                </Link>
+            </main>
+        </div>
+    );
+}
