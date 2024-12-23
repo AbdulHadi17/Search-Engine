@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -17,6 +15,7 @@ export default function AddDocument() {
         title: "",
         location: "",
         skills_desc: "",
+        url: "", // New URL field
     });
 
     const [isDarkMode, setIsDarkMode] = useState(true);
@@ -51,22 +50,13 @@ export default function AddDocument() {
             .map((value) => `"${value.replace(/"/g, '""')}"`)
             .join(",");
 
-        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-
-        const link = document.createElement("a");
-        if (link.download !== undefined) {
-            const url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", "document_data.csv");
-            link.style.visibility = "hidden";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
+        console.log("Generated CSV Data:");
+        console.log(csv);
 
         toast({
             title: "Success",
-            description: "Document added successfully. CSV file downloaded.",
+            description:
+                "Document added successfully. CSV data printed in console.",
         });
 
         setFormData({
@@ -75,7 +65,71 @@ export default function AddDocument() {
             title: "",
             location: "",
             skills_desc: "",
+            url: "", // Reset URL field
         });
+    };
+
+    const requiredFields = [
+        "company_name",
+        "description",
+        "title",
+        "location",
+        "skills_desc",
+        "url", // Add URL to required fields
+    ];
+
+    const handleCSVUpload = (e) => {
+        const file = e.target.files[0];
+        if (file && file.type === "text/csv") {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const csvContent = event.target.result;
+                const rows = csvContent.split("\n").map((row) => row.trim());
+
+                // Extract header row
+                const headers = rows[0]
+                    ?.split(",")
+                    .map((header) => header.trim());
+
+                if (!headers || headers.length === 0) {
+                    toast({
+                        title: "Invalid File",
+                        description: "The uploaded file is empty or invalid.",
+                        variant: "destructive",
+                    });
+                    return;
+                }
+
+                // Check for missing fields
+                const missingFields = requiredFields.filter(
+                    (field) => !headers.includes(field)
+                );
+                if (missingFields.length > 0) {
+                    toast({
+                        title: "Invalid CSV File",
+                        description: `Missing required fields: ${missingFields.join(
+                            ", "
+                        )}`,
+                        variant: "destructive",
+                    });
+                    return;
+                }
+
+                console.log("CSV Content:", csvContent);
+                toast({
+                    title: "Success",
+                    description:
+                        "CSV file validated and uploaded successfully.",
+                });
+            };
+            reader.readAsText(file);
+        } else {
+            toast({
+                title: "Invalid File",
+                description: "Please upload a valid CSV file.",
+                variant: "destructive",
+            });
+        }
     };
 
     return (
@@ -98,6 +152,24 @@ export default function AddDocument() {
                 <h1 className="text-4xl font-bold mb-8 text-gray-800 dark:text-white">
                     Add New Document
                 </h1>
+                <div className="w-full max-w-2xl mt-4">
+                    <Label
+                        htmlFor="csvUpload"
+                        className="block mb-2 text-gray-800 dark:text-gray-300"
+                    >
+                        Upload CSV File
+                    </Label>
+                    <Input
+                        id="csvUpload"
+                        type="file"
+                        accept=".csv"
+                        onChange={handleCSVUpload}
+                        className="p-2 mb-8 bg-white dark:bg-gray-700 border rounded-md"
+                    />
+                </div>
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
+                    OR
+                </h2>
                 <form
                     onSubmit={handleSubmit}
                     className="w-full max-w-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-md space-y-6"
@@ -187,6 +259,23 @@ export default function AddDocument() {
                             required
                         />
                     </div>
+                    <div>
+                        <Label
+                            htmlFor="url"
+                            className="text-gray-800 dark:text-gray-300"
+                        >
+                            URL
+                        </Label>
+                        <Input
+                            id="url"
+                            name="url"
+                            value={formData.url}
+                            onChange={handleChange}
+                            placeholder="Enter URL"
+                            className="mt-2"
+                            required
+                        />
+                    </div>
                     <Button
                         type="submit"
                         className="w-full bg-blue-600 hover:bg-blue-700 text-white"
@@ -196,7 +285,7 @@ export default function AddDocument() {
                 </form>
                 <Button
                     variant="outline"
-                    className="mt-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300"
+                    className="mt-4 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300"
                     onClick={() => navigate("/")}
                 >
                     Back to Search
