@@ -13,7 +13,7 @@ os.makedirs(output_dir, exist_ok=True)
 def get_barrel(term):
     try:
         term_int = int(term)  # Convert the term to an integer
-        barrel_key = term_int // 1000  # Divide by 1000 to get the barrel key
+        barrel_key = term_int // 100  # Divide by 1000 to get the barrel key
         return str(barrel_key)  # Return the barrel as a string (e.g., '20' for terms in the 20th range)
     except ValueError:
         return None  # Handle non-integer terms (if any)
