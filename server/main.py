@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware  # Import CORSMiddleware
 import pandas as pd
 from pathlib import Path
+import os
 import sys
 
 # Add the parent directory of 'server' to the Python path
@@ -26,19 +27,25 @@ async def favicon():
 
 @app.post("/api/process-csv/")
 async def process_csv(file: UploadFile):
+    temp_file = Path("temp_postings.csv")
     try:
         # Save the uploaded file temporarily
-        temp_file = Path("temp_postings.csv")
         with open(temp_file, "wb") as f:
             f.write(file.file.read())
 
-        # Call the lexicon processing function
-        output_file = Path("lexiconDynamic.csv")
-        generate_lexicon(temp_file, output_file)
+        # Generate the lexicon
+        generate_lexicon(temp_file)
+
+        # Delete the temporary file after success
+        if temp_file.exists():
+            temp_file.unlink()  # Deletes the file
 
         return JSONResponse(
-            content={"message": "Lexicon generated successfully", "output_file": str(output_file)},
+            content={"message": "Lexicon generated successfully"},
             status_code=200,
         )
     except Exception as e:
+        # Ensure temp file is deleted in case of failure
+        if temp_file.exists():
+            temp_file.unlink()
         return JSONResponse(content={"error": str(e)}, status_code=500)

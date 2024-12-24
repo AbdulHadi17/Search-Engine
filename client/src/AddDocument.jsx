@@ -4,11 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
 import { Moon, Sun } from "lucide-react";
 
 export default function AddDocument() {
-    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         company_name: "",
         description: "",
@@ -19,6 +17,7 @@ export default function AddDocument() {
     });
 
     const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isLoading, setIsLoading] = useState(false); // Loading state
 
     useEffect(() => {
         if (isDarkMode) {
@@ -72,6 +71,9 @@ export default function AddDocument() {
         const formDataPayload = new FormData();
         formDataPayload.append("file", csvFile);
 
+        // Set loading state to true
+        setIsLoading(true);
+
         // API call to upload CSV
         try {
             const response = await fetch("/api/process-csv/", {
@@ -103,17 +105,18 @@ export default function AddDocument() {
                 variant: "destructive",
             });
             console.error("API Error:", error);
+        } finally {
+            // Reset loading state and form fields
+            setIsLoading(false);
+            // setFormData({
+            //     company_name: "",
+            //     description: "",
+            //     title: "",
+            //     location: "",
+            //     skills_desc: "",
+            //     url: "",
+            // });
         }
-
-        // Reset form fields
-        setFormData({
-            company_name: "",
-            description: "",
-            title: "",
-            location: "",
-            skills_desc: "",
-            url: "",
-        });
     };
 
     const handleCSVUpload = async (e) => {
@@ -121,6 +124,9 @@ export default function AddDocument() {
         if (file && file.type === "text/csv") {
             const formData = new FormData();
             formData.append("file", file);
+
+            // Set loading state to true
+            setIsLoading(true);
 
             try {
                 const response = await fetch("/api/process-csv/", {
@@ -150,6 +156,9 @@ export default function AddDocument() {
                     description: "An unexpected error occurred.",
                     variant: "destructive",
                 });
+            } finally {
+                // Reset loading state
+                setIsLoading(false);
             }
         } else {
             toast({
@@ -300,15 +309,20 @@ export default function AddDocument() {
                             value={formData.url}
                             onChange={handleChange}
                             placeholder="Enter URL"
-                            className="mt .2"
+                            className="mt-2"
                             required
                         />
                     </div>
                     <Button
                         type="submit"
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                        className={`w-full ${
+                            isLoading
+                                ? "bg-gray-400"
+                                : "bg-blue-600 hover:bg-blue-700"
+                        } text-white`}
+                        disabled={isLoading} // Disable button while loading
                     >
-                        Add Document
+                        {isLoading ? "Loading..." : "Add Document"}
                     </Button>
                 </form>
             </main>

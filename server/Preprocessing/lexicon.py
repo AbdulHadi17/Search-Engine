@@ -1,4 +1,3 @@
-# Import necessary libraries
 import pandas as pd
 import re
 import nltk
@@ -8,13 +7,14 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from pathlib import Path
 
-def generate_lexicon(input_csv, output_csv):
+def generate_lexicon(input_csv, output_csv="dummy_lexicon.csv"):
     """
-    Generates a lexicon from the input CSV file and saves it to the specified output file.
+    Processes the input CSV to generate vocabulary and appends unique entries 
+    to a dummy lexicon file in the Preprocessing folder, with indices.
     
     Parameters:
         input_csv (str): Path to the input CSV file.
-        output_csv (str): Path to save the output lexicon file.
+        output_csv (str): Name of the output dummy lexicon file (default: 'dummy_lexicon.csv').
     """
     # Ensure necessary NLTK data is downloaded
     nltk.download("punkt", quiet=True)
@@ -27,17 +27,12 @@ def generate_lexicon(input_csv, output_csv):
 
     # Step 1: Define Text Cleaning Function
     def clean_text(text):
-        """
-        Cleans the input text by:
-        - Converting to lowercase.
-        - Removing special characters, digits, extra whitespace, and unwanted patterns.
-        """
         text = text.lower()
-        text = re.sub(r"[@#]", " ", text)  # Replace @ and # with a space
-        text = re.sub(r"[^\w\s]", " ", text)  # Remove non-alphanumeric characters
-        text = re.sub(r"\d+", " ", text)  # Remove digits
-        text = re.sub(r"\b\w{1,2}\b", " ", text)  # Remove very short words (1-2 characters)
-        text = re.sub(r"\s+", " ", text).strip()  # Remove extra whitespace
+        text = re.sub(r"[@#]", " ", text)
+        text = re.sub(r"[^\w\s]", " ", text)
+        text = re.sub(r"\d+", " ", text)
+        text = re.sub(r"\b\w{1,2}\b", " ", text)
+        text = re.sub(r"\s+", " ", text).strip()
         return text
 
     # Load the CSV file into a Pandas DataFrame
@@ -57,15 +52,7 @@ def generate_lexicon(input_csv, output_csv):
     stop_words = set(stopwords.words("english"))
     lemmatizer = WordNetLemmatizer()
 
-    # Step 4: Tokenize, Remove Stopwords, and Lemmatize
     def process_text(text):
-        """
-        Processes the text by:
-        - Tokenizing.
-        - Removing stopwords.
-        - Lemmatizing tokens.
-        - Filtering non-English words and garbage tokens.
-        """
         tokens = word_tokenize(text)
         lemmatized_tokens = [
             lemmatizer.lemmatize(token)
@@ -74,21 +61,43 @@ def generate_lexicon(input_csv, output_csv):
         ]
         return lemmatized_tokens
 
-    # Apply processing to all specified columns and aggregate tokens
     processed_tokens = []
     for col in columns_to_process:
         if col in data_frame.columns:
             data_frame[col] = data_frame[col].apply(lambda x: process_text(x))
             processed_tokens.extend(data_frame[col].explode().dropna())
 
-    # Step 5: Build Vocabulary
     vocabulary_counter = Counter(processed_tokens)
-    vocabulary = {word: idx for idx, (word, _) in enumerate(vocabulary_counter.most_common())}
+    vocabulary = [word for word, _ in vocabulary_counter.most_common()]
 
-    # Step 6: Save Vocabulary to a CSV File
-    vocabulary_df = pd.DataFrame(vocabulary.items(), columns=["Word", "Index"])
-    vocabulary_df.to_csv(output_csv, index=False)
+    # Set preprocessing_dir as the current directory
+    preprocessing_dir = Path(__file__).parent.resolve()  # Resolve ensures absolute path
+    output_path = preprocessing_dir / output_csv
 
-    # Output results
-    print(f"Lexicon saved successfully to {output_csv}")
-    print("Vocabulary Size:", len(vocabulary))
+    # Ensure the directory exists
+    preprocessing_dir.mkdir(parents=True, exist_ok=True)
+
+    # Ensure the lexicon file exists or create it
+    if not output_path.exists():
+        pd.DataFrame(columns=["Word", "Index"]).to_csv(output_path, index=False)
+
+    existing_lexicon = pd.read_csv(output_path)
+    existing_words = set(existing_lexicon["Word"].dropna())
+    next_index = existing_lexicon["Index"].max() + 1 if not existing_lexicon.empty else 0
+
+    new_entries = [(word, idx) for idx, word in enumerate(vocabulary, start=next_index) if word not in existing_words]
+
+    new_lexicon_df = pd.DataFrame(new_entries, columns=["Word", "Index"])
+
+    if not new_lexicon_df.empty:
+        new_lexicon_df.to_csv(output_path, mode="a", header=False, index=False)
+
+    print(f"Unique words added to {output_csv}: {len(new_entries)}")
+    print("Updated Vocabulary Size:", len(existing_words) + len(new_entries))
+
+def process_text(text):
+    # Dummy implementation of process_text
+    return text.split()
+
+# Example usage
+# generate_lexicon("input.csv", "lexiconDynamic.csv")
