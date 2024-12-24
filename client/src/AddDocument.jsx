@@ -33,9 +33,10 @@ export default function AddDocument() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Validate all fields
         if (Object.values(formData).some((value) => value.trim() === "")) {
             toast({
                 title: "Error",
@@ -46,83 +47,110 @@ export default function AddDocument() {
             return;
         }
 
-        const csv = Object.values(formData)
-            .map((value) => `"${value.replace(/"/g, '""')}"`)
-            .join(",");
+        // Define the column names
+        const columnsToProcess = [
+            "company_name",
+            "description",
+            "title",
+            "location",
+            "skills_desc",
+            "url",
+        ];
 
-        console.log("Generated CSV Data:");
-        console.log(csv);
+        // Convert form data into CSV format
+        const csvHeader = columnsToProcess.join(",") + "\n"; // Add header row
+        const csvData =
+            csvHeader +
+            columnsToProcess
+                .map((key) => `"${formData[key].replace(/"/g, '""')}"`)
+                .join(",") +
+            "\n";
 
-        toast({
-            title: "Success",
-            description:
-                "Document added successfully. CSV data printed in console.",
-        });
+        // Prepare the payload
+        const blob = new Blob([csvData], { type: "text/csv" });
+        const csvFile = new File([blob], "document.csv", { type: "text/csv" });
+        const formDataPayload = new FormData();
+        formDataPayload.append("file", csvFile);
 
+        // API call to upload CSV
+        try {
+            const response = await fetch("/api/process-csv/", {
+                method: "POST",
+                body: formDataPayload,
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                toast({
+                    title: "Success",
+                    description: "Document added successfully and processed.",
+                });
+                console.log("Server Response:", data);
+            } else {
+                const error = await response.json();
+                toast({
+                    title: "Error",
+                    description:
+                        error.error || "Failed to process the document.",
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+            toast({
+                title: "Error",
+                description:
+                    "An unexpected error occurred during the API call.",
+                variant: "destructive",
+            });
+            console.error("API Error:", error);
+        }
+
+        // Reset form fields
         setFormData({
             company_name: "",
             description: "",
             title: "",
             location: "",
             skills_desc: "",
-            url: "", // Reset URL field
+            url: "",
         });
     };
 
-    const requiredFields = [
-        "company_name",
-        "description",
-        "title",
-        "location",
-        "skills_desc",
-        "url", // Add URL to required fields
-    ];
-
-    const handleCSVUpload = (e) => {
+    const handleCSVUpload = async (e) => {
         const file = e.target.files[0];
         if (file && file.type === "text/csv") {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const csvContent = event.target.result;
-                const rows = csvContent.split("\n").map((row) => row.trim());
+            const formData = new FormData();
+            formData.append("file", file);
 
-                // Extract header row
-                const headers = rows[0]
-                    ?.split(",")
-                    .map((header) => header.trim());
-
-                if (!headers || headers.length === 0) {
-                    toast({
-                        title: "Invalid File",
-                        description: "The uploaded file is empty or invalid.",
-                        variant: "destructive",
-                    });
-                    return;
-                }
-
-                // Check for missing fields
-                const missingFields = requiredFields.filter(
-                    (field) => !headers.includes(field)
-                );
-                if (missingFields.length > 0) {
-                    toast({
-                        title: "Invalid CSV File",
-                        description: `Missing required fields: ${missingFields.join(
-                            ", "
-                        )}`,
-                        variant: "destructive",
-                    });
-                    return;
-                }
-
-                console.log("CSV Content:", csvContent);
-                toast({
-                    title: "Success",
-                    description:
-                        "CSV file validated and uploaded successfully.",
+            try {
+                const response = await fetch("/api/process-csv/", {
+                    method: "POST",
+                    body: formData,
                 });
-            };
-            reader.readAsText(file);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    toast({
+                        title: "Success",
+                        description: "Lexicon generated successfully.",
+                    });
+                    console.log("Generated Lexicon:", data.output_file);
+                } else {
+                    const error = await response.json();
+                    toast({
+                        title: "Error",
+                        description:
+                            error.error || "Failed to generate lexicon.",
+                        variant: "destructive",
+                    });
+                }
+            } catch (error) {
+                toast({
+                    title: "Error",
+                    description: "An unexpected error occurred.",
+                    variant: "destructive",
+                });
+            }
         } else {
             toast({
                 title: "Invalid File",
@@ -272,7 +300,7 @@ export default function AddDocument() {
                             value={formData.url}
                             onChange={handleChange}
                             placeholder="Enter URL"
-                            className="mt-2"
+                            className="mt .2"
                             required
                         />
                     </div>
@@ -283,13 +311,6 @@ export default function AddDocument() {
                         Add Document
                     </Button>
                 </form>
-                <Button
-                    variant="outline"
-                    className="mt-4 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300"
-                    onClick={() => navigate("/")}
-                >
-                    Back to Search
-                </Button>
             </main>
         </div>
     );
