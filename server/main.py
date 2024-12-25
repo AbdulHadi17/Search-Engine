@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware  # Import CORSMiddleware
 from pathlib import Path
 import sys
+import csv
 import pathlib
 # Add the parent directory of 'server' to the Python path
 sys.path.append(str(Path(__file__).resolve().parent))
@@ -28,6 +29,17 @@ async def process_csv(file: UploadFile):
         # Save the uploaded file temporarily
         with open(temp_file, "wb") as f:
             f.write(file.file.read())
+
+        data_file = (pathlib.Path().absolute() / "data" /"data.csv")  # Path to the existing data file
+
+         # Append the content of temp_file to data.csv, excluding the header
+        with open(temp_file, "r", newline="", encoding="utf-8") as temp_csv:
+            temp_reader = csv.reader(temp_csv)
+            temp_data = list(temp_reader)[1:]  # Skip the header row
+
+        with open(data_file, "a", newline="", encoding="utf-8") as data_csv:
+            data_writer = csv.writer(data_csv)
+            data_writer.writerows(temp_data)
 
         # Generate the lexicon
         output_path = (pathlib.Path().absolute() / "Preprocessing" /"lexicon.csv")
