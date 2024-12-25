@@ -67,4 +67,3 @@ def query_from_barrel_and_bucket(term):
         # Query the appropriate bucket and term
         return barrel_data.get(bucket_key, {}).get(term, None)
     return None
-
