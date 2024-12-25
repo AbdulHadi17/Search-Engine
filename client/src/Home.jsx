@@ -6,33 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Mock function to simulate search (unchanged)
-const mockSearch = async (query) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    return [
-        {
-            id: 1,
-            title: `Result 1 for "${query}"`,
-            snippet: "This is a snippet for result 1...",
-        },
-        {
-            id: 2,
-            title: `Result 2 for "${query}"`,
-            snippet: "This is a snippet for result 2...",
-        },
-        {
-            id: 3,
-            title: `Result 3 for "${query}"`,
-            snippet: "This is a snippet for result 3...",
-        },
-    ];
-};
-
 export default function Home() {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
     const [isSearching, setIsSearching] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(true);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         if (isDarkMode) {
@@ -47,9 +26,31 @@ export default function Home() {
         if (!query.trim()) return;
 
         setIsSearching(true);
-        const searchResults = await mockSearch(query);
-        setResults(searchResults);
-        setIsSearching(false);
+        setError("");
+
+        try {
+            const response = await fetch("/api/get-query-result/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ text: query }), // Sending the query as JSON in the body
+            });
+
+            if (!response.ok) {
+                const errorResponse = await response.json();
+                console.error("Error Response:", errorResponse);
+                throw new Error(errorResponse.message || "An error occurred while searching.");
+            }
+
+            const data = await response.json();
+            setResults(data.ranked_results || []);
+        } catch (err) {
+            console.error("Error:", err.message);
+            setError(err.message);
+        } finally {
+            setIsSearching(false);
+        }
     };
 
     return (
@@ -91,6 +92,12 @@ export default function Home() {
                         </Button>
                     </div>
                 </form>
+
+                {error && (
+                    <div className="text-red-500 mb-4">
+                        {error}
+                    </div>
+                )}
 
                 <div className="w-full max-w-2xl mb-8">
                     {results.map((result) => (

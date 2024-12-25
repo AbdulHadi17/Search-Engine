@@ -1,114 +1,946 @@
-
-    [
-      {"docID": "13239", "frequency": 1, "positions": [2]},
-      {"docID": "14282", "frequency": 11, "positions": [7, 9, 56, 117, 137, 164, 240, 293, 393, 704, 747]},
-      {"docID": "14930", "frequency": 1, "positions": [543]},
-      {"docID": "17553", "frequency": 1, "positions": [2]},
-      {"docID": "17956", "frequency": 1, "positions": [2]},
-      {"docID": "18026", "frequency": 1, "positions": [37]},
-      {"docID": "18467", "frequency": 1, "positions": [36]},
-      {"docID": "20925", "frequency": 1, "positions": [2]},
-      {"docID": "22032", "frequency": 1, "positions": [7]},
-      {"docID": "23455", "frequency": 1, "positions": [3]},
-      {"docID": "23489", "frequency": 1, "positions": [2]},
-      {"docID": "23503", "frequency": 1, "positions": [3]},
-      {"docID": "23573", "frequency": 1, "positions": [2]},
-      {"docID": "24015", "frequency": 1, "positions": [3]},
-      {"docID": "24231", "frequency": 1, "positions": [2]},
-      {"docID": "24494", "frequency": 1, "positions": [3]},
-      {"docID": "24519", "frequency": 1, "positions": [5]},
-      {"docID": "24805", "frequency": 1, "positions": [426]},
-      {"docID": "25198", "frequency": 1, "positions": [4]},
-      {"docID": "25605", "frequency": 1, "positions": [3]},
-      {"docID": "25717", "frequency": 1, "positions": [2]},
-      {"docID": "25981", "frequency": 1, "positions": [202]},
-      {"docID": "28531", "frequency": 1, "positions": [2]},
-      {"docID": "29209", "frequency": 1, "positions": [2]},
-      {"docID": "29553", "frequency": 1, "positions": [7]},
-      {"docID": "29594", "frequency": 1, "positions": [2]},
-      {"docID": "32051", "frequency": 1, "positions": [560]},
-      {"docID": "32937", "frequency": 1, "positions": [2]},
-      {"docID": "34904", "frequency": 1, "positions": [367]},
-      {"docID": "35170", "frequency": 1, "positions": [472]},
-      {"docID": "35284", "frequency": 1, "positions": [468]},
-      {"docID": "36072", "frequency": 1, "positions": [367]},
-      {"docID": "37307", "frequency": 1, "positions": [112]},
-      {"docID": "37521", "frequency": 1, "positions": [232]},
-      {"docID": "38394", "frequency": 1, "positions": [3]},
-      {"docID": "38674", "frequency": 1, "positions": [4]},
-      {"docID": "39860", "frequency": 1, "positions": [2]},
-      {"docID": "40833", "frequency": 1, "positions": [2]},
-      {"docID": "40942", "frequency": 1, "positions": [3]},
-      {"docID": "41051", "frequency": 1, "positions": [8]},
-      {"docID": "41320", "frequency": 1, "positions": [107]},
-      {"docID": "41403", "frequency": 1, "positions": [5]},
-      {"docID": "41417", "frequency": 1, "positions": [4]},
-      {"docID": "41447", "frequency": 1, "positions": [3]},
-      {"docID": "41531", "frequency": 1, "positions": [2]},
-      {"docID": "41846", "frequency": 1, "positions": [4]},
-      {"docID": "42655", "frequency": 1, "positions": [2]},
-      {"docID": "42744", "frequency": 1, "positions": [34]},
-      {"docID": "42845", "frequency": 1, "positions": [3]},
-      {"docID": "43164", "frequency": 1, "positions": [4]},
-      {"docID": "43241", "frequency": 1, "positions": [1]},
-      {"docID": "43320", "frequency": 1, "positions": [876]},
-      {"docID": "43810", "frequency": 1, "positions": [42]},
-      {"docID": "43822", "frequency": 1, "positions": [143]},
-      {"docID": "44667", "frequency": 1, "positions": [5]},
-      {"docID": "45121", "frequency": 1, "positions": [2]},
-      {"docID": "46194", "frequency": 1, "positions": [10]},
-      {"docID": "46337", "frequency": 1, "positions": [15]},
-      {"docID": "46450", "frequency": 1, "positions": [2]},
-      {"docID": "47820", "frequency": 1, "positions": [72]},
-      {"docID": "47851", "frequency": 1, "positions": [145]},
-      {"docID": "47874", "frequency": 1, "positions": [338]},
-      {"docID": "47933", "frequency": 1, "positions": [305]},
-      {"docID": "48101", "frequency": 1, "positions": [3]},
-      {"docID": "48199", "frequency": 1, "positions": [2]},
-      {"docID": "48226", "frequency": 1, "positions": [3]},
-      {"docID": "48342", "frequency": 1, "positions": [5]},
-      {"docID": "48359", "frequency": 1, "positions": [3]},
-      {"docID": "48449", "frequency": 1, "positions": [7]},
-      {"docID": "48495", "frequency": 1, "positions": [2]},
-      {"docID": "48524", "frequency": 1, "positions": [3]},
-      {"docID": "48718", "frequency": 1, "positions": [2]},
-      {"docID": "48740", "frequency": 1, "positions": [2]},
-      {"docID": "48756", "frequency": 1, "positions": [6]},
-      {"docID": "48833", "frequency": 1, "positions": [403]},
-      {"docID": "49058", "frequency": 1, "positions": [5]},
-      {"docID": "49084", "frequency": 1, "positions": [6]},
-      {"docID": "49128", "frequency": 1, "positions": [4]},
-      {"docID": "49291", "frequency": 1, "positions": [2]},
-      {"docID": "49326", "frequency": 1, "positions": [3]},
-      {"docID": "49430", "frequency": 1, "positions": [2]},
-      {"docID": "49679", "frequency": 2, "positions": [184, 276]},
-      {"docID": "49718", "frequency": 1, "positions": [3]},
-      {"docID": "51167", "frequency": 1, "positions": [468]},
-      {"docID": "51172", "frequency": 1, "positions": [2]},
-      {"docID": "51378", "frequency": 1, "positions": [556]},
-      {"docID": "51469", "frequency": 1, "positions": [5]},
-      {"docID": "51607", "frequency": 1, "positions": [26]},
-      {"docID": "51710", "frequency": 1, "positions": [3]},
-      {"docID": "51783", "frequency": 1, "positions": [6]},
-      {"docID": "52098", "frequency": 1, "positions": [387]},
-      {"docID": "52720", "frequency": 1, "positions": [3]},
-      {"docID": "52953", "frequency": 1, "positions": [4]},
-      {"docID": "53731", "frequency": 9, "positions": [6, 8, 55, 116, 136, 163, 201, 529, 572]},
-      {"docID": "55156", "frequency": 1, "positions": [249]},
-      {"docID": "55223", "frequency": 1, "positions": [10]},
-      {"docID": "55287", "frequency": 1, "positions": [13]},
-      {"docID": "55323", "frequency": 1, "positions": [309]},
-      {"docID": "56530", "frequency": 1, "positions": [550]},
-      {"docID": "56575", "frequency": 1, "positions": [662]},
-      {"docID": "56778", "frequency": 1, "positions": [2]},
-      {"docID": "57103", "frequency": 1, "positions": [4]},
-      {"docID": "57639", "frequency": 1, "positions": [3]},
-      {"docID": "57764", "frequency": 2, "positions": [18, 528]},
-      {"docID": "57824", "frequency": 1, "positions": [3]},
-      {"docID": "57837", "frequency": 1, "positions": [2]},
-      {"docID": "58033", "frequency": 1, "positions": [3]},
-      {"docID": "58093", "frequency": 1, "positions": [4]},
-      {"docID": "58127", "frequency": 1, "positions": [3]}
-    ]
-  
-  
+[
+    {
+        "docID": "304",
+        "frequency": 1,
+        "positions": [
+            1
+        ]
+    },
+    {
+        "docID": "538",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "559",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "582",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "724",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "747",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "1111",
+        "frequency": 1,
+        "positions": [
+            6
+        ]
+    },
+    {
+        "docID": "1962",
+        "frequency": 1,
+        "positions": [
+            17
+        ]
+    },
+    {
+        "docID": "2318",
+        "frequency": 1,
+        "positions": [
+            254
+        ]
+    },
+    {
+        "docID": "4582",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "6217",
+        "frequency": 1,
+        "positions": [
+            1125
+        ]
+    },
+    {
+        "docID": "6492",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "7677",
+        "frequency": 1,
+        "positions": [
+            80
+        ]
+    },
+    {
+        "docID": "7732",
+        "frequency": 1,
+        "positions": [
+            76
+        ]
+    },
+    {
+        "docID": "9557",
+        "frequency": 1,
+        "positions": [
+            253
+        ]
+    },
+    {
+        "docID": "9558",
+        "frequency": 1,
+        "positions": [
+            253
+        ]
+    },
+    {
+        "docID": "10666",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "11550",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "11635",
+        "frequency": 1,
+        "positions": [
+            341
+        ]
+    },
+    {
+        "docID": "12538",
+        "frequency": 1,
+        "positions": [
+            17
+        ]
+    },
+    {
+        "docID": "12548",
+        "frequency": 1,
+        "positions": [
+            6
+        ]
+    },
+    {
+        "docID": "12810",
+        "frequency": 1,
+        "positions": [
+            511
+        ]
+    },
+    {
+        "docID": "12963",
+        "frequency": 1,
+        "positions": [
+            346
+        ]
+    },
+    {
+        "docID": "13239",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "14282",
+        "frequency": 11,
+        "positions": [
+            7,
+            9,
+            56,
+            117,
+            137,
+            164,
+            240,
+            293,
+            393,
+            704,
+            747
+        ]
+    },
+    {
+        "docID": "14930",
+        "frequency": 1,
+        "positions": [
+            543
+        ]
+    },
+    {
+        "docID": "17553",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "17956",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "18026",
+        "frequency": 1,
+        "positions": [
+            37
+        ]
+    },
+    {
+        "docID": "18467",
+        "frequency": 1,
+        "positions": [
+            36
+        ]
+    },
+    {
+        "docID": "20925",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "22032",
+        "frequency": 1,
+        "positions": [
+            7
+        ]
+    },
+    {
+        "docID": "23455",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "23489",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "23503",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "23573",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "24015",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "24231",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "24494",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "24519",
+        "frequency": 1,
+        "positions": [
+            5
+        ]
+    },
+    {
+        "docID": "24805",
+        "frequency": 1,
+        "positions": [
+            426
+        ]
+    },
+    {
+        "docID": "25198",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "25605",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "25717",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "25981",
+        "frequency": 1,
+        "positions": [
+            202
+        ]
+    },
+    {
+        "docID": "28531",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "29209",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "29553",
+        "frequency": 1,
+        "positions": [
+            7
+        ]
+    },
+    {
+        "docID": "29594",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "32051",
+        "frequency": 1,
+        "positions": [
+            560
+        ]
+    },
+    {
+        "docID": "32937",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "34904",
+        "frequency": 1,
+        "positions": [
+            367
+        ]
+    },
+    {
+        "docID": "35170",
+        "frequency": 1,
+        "positions": [
+            472
+        ]
+    },
+    {
+        "docID": "35284",
+        "frequency": 1,
+        "positions": [
+            468
+        ]
+    },
+    {
+        "docID": "36072",
+        "frequency": 1,
+        "positions": [
+            367
+        ]
+    },
+    {
+        "docID": "37307",
+        "frequency": 1,
+        "positions": [
+            112
+        ]
+    },
+    {
+        "docID": "37521",
+        "frequency": 1,
+        "positions": [
+            232
+        ]
+    },
+    {
+        "docID": "38394",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "38674",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "39860",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "40833",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "40942",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "41051",
+        "frequency": 1,
+        "positions": [
+            8
+        ]
+    },
+    {
+        "docID": "41320",
+        "frequency": 1,
+        "positions": [
+            107
+        ]
+    },
+    {
+        "docID": "41403",
+        "frequency": 1,
+        "positions": [
+            5
+        ]
+    },
+    {
+        "docID": "41417",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "41447",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "41531",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "41846",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "42655",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "42744",
+        "frequency": 1,
+        "positions": [
+            34
+        ]
+    },
+    {
+        "docID": "42845",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "43164",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "43241",
+        "frequency": 1,
+        "positions": [
+            1
+        ]
+    },
+    {
+        "docID": "43320",
+        "frequency": 1,
+        "positions": [
+            876
+        ]
+    },
+    {
+        "docID": "43810",
+        "frequency": 1,
+        "positions": [
+            42
+        ]
+    },
+    {
+        "docID": "43822",
+        "frequency": 1,
+        "positions": [
+            143
+        ]
+    },
+    {
+        "docID": "44667",
+        "frequency": 1,
+        "positions": [
+            5
+        ]
+    },
+    {
+        "docID": "45121",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "46194",
+        "frequency": 1,
+        "positions": [
+            10
+        ]
+    },
+    {
+        "docID": "46337",
+        "frequency": 1,
+        "positions": [
+            15
+        ]
+    },
+    {
+        "docID": "46450",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "47820",
+        "frequency": 1,
+        "positions": [
+            72
+        ]
+    },
+    {
+        "docID": "47851",
+        "frequency": 1,
+        "positions": [
+            145
+        ]
+    },
+    {
+        "docID": "47874",
+        "frequency": 1,
+        "positions": [
+            338
+        ]
+    },
+    {
+        "docID": "47933",
+        "frequency": 1,
+        "positions": [
+            305
+        ]
+    },
+    {
+        "docID": "48101",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "48199",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "48226",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "48342",
+        "frequency": 1,
+        "positions": [
+            5
+        ]
+    },
+    {
+        "docID": "48359",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "48449",
+        "frequency": 1,
+        "positions": [
+            7
+        ]
+    },
+    {
+        "docID": "48495",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "48524",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "48718",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "48740",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "48756",
+        "frequency": 1,
+        "positions": [
+            6
+        ]
+    },
+    {
+        "docID": "48833",
+        "frequency": 1,
+        "positions": [
+            403
+        ]
+    },
+    {
+        "docID": "49058",
+        "frequency": 1,
+        "positions": [
+            5
+        ]
+    },
+    {
+        "docID": "49084",
+        "frequency": 1,
+        "positions": [
+            6
+        ]
+    },
+    {
+        "docID": "49128",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "49291",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "49326",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "49430",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "49679",
+        "frequency": 2,
+        "positions": [
+            184,
+            276
+        ]
+    },
+    {
+        "docID": "49718",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "51167",
+        "frequency": 1,
+        "positions": [
+            468
+        ]
+    },
+    {
+        "docID": "51172",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "51378",
+        "frequency": 1,
+        "positions": [
+            556
+        ]
+    },
+    {
+        "docID": "51469",
+        "frequency": 1,
+        "positions": [
+            5
+        ]
+    },
+    {
+        "docID": "51607",
+        "frequency": 1,
+        "positions": [
+            26
+        ]
+    },
+    {
+        "docID": "51710",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "51783",
+        "frequency": 1,
+        "positions": [
+            6
+        ]
+    },
+    {
+        "docID": "52098",
+        "frequency": 1,
+        "positions": [
+            387
+        ]
+    },
+    {
+        "docID": "52720",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "52953",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "53731",
+        "frequency": 9,
+        "positions": [
+            6,
+            8,
+            55,
+            116,
+            136,
+            163,
+            201,
+            529,
+            572
+        ]
+    },
+    {
+        "docID": "55156",
+        "frequency": 1,
+        "positions": [
+            249
+        ]
+    },
+    {
+        "docID": "55223",
+        "frequency": 1,
+        "positions": [
+            10
+        ]
+    },
+    {
+        "docID": "55287",
+        "frequency": 1,
+        "positions": [
+            13
+        ]
+    },
+    {
+        "docID": "55323",
+        "frequency": 1,
+        "positions": [
+            309
+        ]
+    },
+    {
+        "docID": "56530",
+        "frequency": 1,
+        "positions": [
+            550
+        ]
+    },
+    {
+        "docID": "56575",
+        "frequency": 1,
+        "positions": [
+            662
+        ]
+    },
+    {
+        "docID": "56778",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "57103",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "57639",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "57764",
+        "frequency": 2,
+        "positions": [
+            18,
+            528
+        ]
+    },
+    {
+        "docID": "57824",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "57837",
+        "frequency": 1,
+        "positions": [
+            2
+        ]
+    },
+    {
+        "docID": "58033",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    },
+    {
+        "docID": "58093",
+        "frequency": 1,
+        "positions": [
+            4
+        ]
+    },
+    {
+        "docID": "58127",
+        "frequency": 1,
+        "positions": [
+            3
+        ]
+    }
+]
