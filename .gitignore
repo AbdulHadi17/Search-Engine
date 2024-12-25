@@ -1,6 +1,9 @@
 *.env
 /server/data/postings.csv
 /server/Forward_Index/forward_index.json
+/server/Forward_Index/New_forward_index.json
 /server/inverted_index/inverted_index.json
+/server/inverted_index/new_Inverted.json
 /server/Preprocessing/lexicon.csv
 /server/inverted_index/barrels
+/server/temp_postings.csv
