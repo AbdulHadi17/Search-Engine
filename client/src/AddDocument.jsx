@@ -108,14 +108,14 @@ export default function AddDocument() {
         } finally {
             // Reset loading state and form fields
             setIsLoading(false);
-            // setFormData({
-            //     company_name: "",
-            //     description: "",
-            //     title: "",
-            //     location: "",
-            //     skills_desc: "",
-            //     url: "",
-            // });
+            setFormData({
+                company_name: "",
+                description: "",
+                title: "",
+                location: "",
+                skills_desc: "",
+                url: "",
+            });
         }
     };
 
