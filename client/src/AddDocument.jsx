@@ -119,56 +119,6 @@ export default function AddDocument() {
         }
     };
 
-    const handleCSVUpload = async (e) => {
-        const file = e.target.files[0];
-        if (file && file.type === "text/csv") {
-            const formData = new FormData();
-            formData.append("file", file);
-
-            // Set loading state to true
-            setIsLoading(true);
-
-            try {
-                const response = await fetch("/api/process-csv/", {
-                    method: "POST",
-                    body: formData,
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    toast({
-                        title: "Success",
-                        description: "Lexicon generated successfully.",
-                    });
-                    console.log("Generated Lexicon:", data.output_file);
-                } else {
-                    const error = await response.json();
-                    toast({
-                        title: "Error",
-                        description:
-                            error.error || "Failed to generate lexicon.",
-                        variant: "destructive",
-                    });
-                }
-            } catch (error) {
-                toast({
-                    title: "Error",
-                    description: "An unexpected error occurred.",
-                    variant: "destructive",
-                });
-            } finally {
-                // Reset loading state
-                setIsLoading(false);
-            }
-        } else {
-            toast({
-                title: "Invalid File",
-                description: "Please upload a valid CSV file.",
-                variant: "destructive",
-            });
-        }
-    };
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 transition-colors duration-500">
             <div className="absolute inset-0 bg-grid-slate-200 dark:bg-grid-slate-700 [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none"></div>
@@ -189,24 +139,6 @@ export default function AddDocument() {
                 <h1 className="text-4xl font-bold mb-8 text-gray-800 dark:text-white">
                     Add New Document
                 </h1>
-                <div className="w-full max-w-2xl mt-4">
-                    <Label
-                        htmlFor="csvUpload"
-                        className="block mb-2 text-gray-800 dark:text-gray-300"
-                    >
-                        Upload CSV File
-                    </Label>
-                    <Input
-                        id="csvUpload"
-                        type="file"
-                        accept=".csv"
-                        onChange={handleCSVUpload}
-                        className="p-2 mb-8 bg-white dark:bg-gray-700 border rounded-md"
-                    />
-                </div>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-                    OR
-                </h2>
                 <form
                     onSubmit={handleSubmit}
                     className="w-full max-w-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-md space-y-6"
