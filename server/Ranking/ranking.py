@@ -2,7 +2,6 @@ import json
 import pandas as pd
 from pathlib import Path
 
-
 def reformat_filtered_results(filtered_results):
     """
     Reformat filtered results to ensure it follows the correct format.
@@ -16,20 +15,29 @@ def reformat_filtered_results(filtered_results):
     if isinstance(filtered_results, dict):  # Convert dict format to list
         reformatted_results = []
         for doc_id, terms in filtered_results.items():
+            if not isinstance(terms, dict):
+                raise ValueError(f"Invalid terms format for doc_id {doc_id}: {terms}")
+
             consolidated_entry = {
                 "docID": doc_id,
-                "frequency": sum(term["frequency"] for term in terms),
+                "frequency": sum(
+                    term.get("frequency", 0) for term in terms.values()
+                    if isinstance(term, dict)
+                ),
                 "positions": sorted(
-                    pos for term in terms for pos in term["positions"]
+                    pos for term in terms.values() if isinstance(term, dict)
+                    for pos in term.get("positions", [])
                 ),
             }
             reformatted_results.append(consolidated_entry)
         return reformatted_results
     elif isinstance(filtered_results, list):  # Already in list format
+        for item in filtered_results:
+            if not all(key in item for key in ("docID", "frequency", "positions")):
+                raise ValueError(f"Invalid item format in filtered results: {item}")
         return filtered_results
     else:
         raise ValueError("Unexpected format for filtered results.")
-
 
 def rank_documents_with_metadata(filtered_results, metadata_df):
     """
@@ -81,7 +89,6 @@ def rank_documents_with_metadata(filtered_results, metadata_df):
 
     return results
 
-
 # Define file paths
 absolute_path = Path(__file__).resolve()
 filtered_result_path = absolute_path.parents[0] / 'filtered_results.json'
@@ -92,6 +99,10 @@ try:
     if filtered_result_path.exists():
         with open(filtered_result_path, mode='r', encoding='utf-8') as file:
             filtered_results = json.load(file)
+            
+            # Debugging step to inspect loaded data
+            # print("Loaded filtered results:", json.dumps(filtered_results, indent=4))
+            
             filtered_results = reformat_filtered_results(filtered_results)
     else:
         raise FileNotFoundError("Filtered results JSON file not found.")
@@ -106,6 +117,10 @@ columns_to_process = ["company_name", "description", "title", "location", "skill
 try:
     if metadata_file_path.exists():
         metadata_df = pd.read_csv(metadata_file_path, usecols=columns_to_process)
+
+        # Validate metadata DataFrame
+        if not all(col in metadata_df.columns for col in columns_to_process):
+            raise ValueError("Metadata file does not contain all required columns.")
     else:
         raise FileNotFoundError("Metadata CSV file not found.")
 except Exception as e:
