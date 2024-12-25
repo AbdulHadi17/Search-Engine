@@ -53,3 +53,9 @@ This project is a job postings application that allows users to add new job post
     ```
     This will start the FastAPI backend server at http://localhost:8000.
 
+
+## Demo
+
+![Home Page](https://res.cloudinary.com/dl0xxcavw/image/upload/v1735138550/Screenshot_2024-12-25_195324_e5muvo.png)
+
+![Add Document](https://res.cloudinary.com/dl0xxcavw/image/upload/v1735138691/Screenshot_2024-12-25_195756_rrgvco.png)
