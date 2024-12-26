@@ -9,11 +9,11 @@ import { Moon, Sun } from "lucide-react";
 export default function AddDocument() {
     const [formData, setFormData] = useState({
         company_name: "",
-        description: "",
         title: "",
+        description: "",
         location: "",
+        job_posting_url: "", // New URL field
         skills_desc: "",
-        url: "", // New URL field
     });
 
     const [isDarkMode, setIsDarkMode] = useState(true);
@@ -49,11 +49,11 @@ export default function AddDocument() {
         // Define the column names
         const columnsToProcess = [
             "company_name",
-            "description",
             "title",
+            "description",
             "location",
+            "job_posting_url",
             "skills_desc",
-            "url",
         ];
 
         // Convert form data into CSV format
@@ -230,15 +230,15 @@ export default function AddDocument() {
                     </div>
                     <div>
                         <Label
-                            htmlFor="url"
+                            htmlFor="job_posting_url"
                             className="text-gray-800 dark:text-gray-300"
                         >
                             URL
                         </Label>
                         <Input
-                            id="url"
-                            name="url"
-                            value={formData.url}
+                            id="job_posting_url"
+                            name="job_posting_url"
+                            value={formData.job_posting_url}
                             onChange={handleChange}
                             placeholder="Enter URL"
                             className="mt-2"
