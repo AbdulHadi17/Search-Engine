@@ -59,3 +59,9 @@ This project is a job postings application that allows users to add new job post
 ![Home Page](https://res.cloudinary.com/dl0xxcavw/image/upload/v1735138550/Screenshot_2024-12-25_195324_e5muvo.png)
 
 ![Add Document](https://res.cloudinary.com/dl0xxcavw/image/upload/v1735138691/Screenshot_2024-12-25_195756_rrgvco.png)
+
+### Contributors
+
+- [Anas Rehman](https://github.com/anas464092)
+- [Abdul Hadi Saqib](https://github.com/AbdulHadi17)
+- [Ahmad Raza](https://github.com/AhmadRazaSeecs)
