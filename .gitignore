@@ -7,3 +7,6 @@
 /server/Preprocessing/lexicon.csv
 /server/inverted_index/barrels
 /server/temp_postings.csv
+# Ignore Python bytecode cache files
+*.pyc
+__pycache__/
