@@ -40,7 +40,10 @@ export default function Home() {
             if (!response.ok) {
                 const errorResponse = await response.json();
                 console.error("Error Response:", errorResponse);
-                throw new Error(errorResponse.message || "An error occurred while searching.");
+                throw new Error(
+                    errorResponse.message ||
+                        "An error occurred while searching."
+                );
             }
 
             const data = await response.json();
@@ -93,24 +96,25 @@ export default function Home() {
                     </div>
                 </form>
 
-                {error && (
-                    <div className="text-red-500 mb-4">
-                        {error}
-                    </div>
-                )}
+                {error && <div className="text-red-500 mb-4">{error}</div>}
 
                 <div className="w-full max-w-2xl mb-8">
                     {results.map((result) => (
                         <div
-                            key={result.id}
-                            className="mb-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg"
+                            key={result.doc_id}
+                            className="mb-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-out"
                         >
-                            <h2 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                            <h2 className="text-2xl font-bold text-blue-500 dark:text-blue-300  transition-colors duration-300">
                                 {result.title}
                             </h2>
-                            <p className="text-sm text-gray-600 dark:text-gray-300">
-                                {result.snippet}
-                            </p>
+                            <a
+                                href={result.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-gray-500 dark:text-gray-400 hover:text-blue-400 dark:hover:text-blue-500 underline decoration-dotted transition-colors duration-300"
+                            >
+                                {result.url}
+                            </a>
                         </div>
                     ))}
                 </div>
