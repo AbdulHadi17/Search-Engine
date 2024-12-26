@@ -5,7 +5,7 @@ from pathlib import Path
 # Add the 'Preprocessing' directory to the Python path
 sys.path.append(str(Path(__file__).resolve().parent))
 
-input_path = (pathlib.Path().absolute()/"server" / "data" / "data.csv")
+input_path = (pathlib.Path().absolute()/"server" / "data" / "postings.csv")
 output_path = (pathlib.Path().absolute() /"server" / "Preprocessing" /"lexicon.csv")
 from LexiconGenerator import LexiconGenerator
 

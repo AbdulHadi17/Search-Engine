@@ -37,9 +37,9 @@ async def process_csv(file: UploadFile):
         with open(temp_file, "wb") as f:
             f.write(file.file.read())
 
-        data_file = (pathlib.Path().absolute() / "data" /"data.csv")  # Path to the existing data file
+        data_file = (pathlib.Path().absolute() / "data" /"postings.csv")  # Path to the existing data file
 
-         # Append the content of temp_file to data.csv, excluding the header
+         # Append the content of temp_file to postings.csv, excluding the header
         with open(temp_file, "r", newline="", encoding="utf-8") as temp_csv:
             temp_reader = csv.reader(temp_csv)
             temp_data = list(temp_reader)[1:]  # Skip the header row
